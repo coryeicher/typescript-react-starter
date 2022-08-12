@@ -29,7 +29,8 @@ describe('<App />', () => {
 
    it('renders the correct name after updating the input value', () => {
       const app = mount(<App store={store} version={1.1}/>);
-      app.find('input').simulate('change', { target: { value: 'Jason Raimondi' } });
-      expect(app.find('.your-name').text()).toEqual('Your Name: Jason Raimondi');
+      const username = 'Dogstar'
+      app.find('input').simulate('change', { target: { value: username } });
+      expect(app.find('.your-name').text()).toEqual(`Your Name: ${username}`);
    });
 });
